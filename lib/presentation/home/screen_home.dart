@@ -3,8 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:netflix_app/Presentation/home/widgets/animated_hori_scroll.dart';
 import 'package:netflix_app/Presentation/home/widgets/horizontal_scroll.dart';
 import 'package:netflix_app/Presentation/home/widgets/top_section.dart';
-import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/colors.dart';
+import 'package:netflix_app/core/constants.dart';
 
 class ScreenHome extends StatelessWidget {
   ScreenHome({Key? key}) : super(key: key);
@@ -31,6 +31,7 @@ class ScreenHome extends StatelessWidget {
                 ListView(
                   children: const [
                     HomeTopSection(),
+                    SbHeight10,
                     HorizontalScroll(title: 'Released in the past year'),
                     SbHeight20,
                     HorizontalScroll(title: 'Trending Now'),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/Presentation/Widgets/main_card.dart';
 import 'package:netflix_app/Presentation/Widgets/main_title.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/constants.dart';
 
 const imgurl =
     'https://www.themoviedb.org/t/p/w220_and_h330_face/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg';

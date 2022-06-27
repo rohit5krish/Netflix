@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/Presentation/Widgets/main_title.dart';
 import 'package:netflix_app/Presentation/home/widgets/animated_num_card.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/constants.dart';
 
 class AnimatedHorizontalScroll extends StatelessWidget {
   const AnimatedHorizontalScroll({

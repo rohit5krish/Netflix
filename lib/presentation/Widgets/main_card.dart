@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/constants.dart';
 
 class MainCard extends StatelessWidget {
   const MainCard({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class MainCard extends StatelessWidget {
         borderRadius: borderRad10,
         image: const DecorationImage(
           image: NetworkImage(
-              'https://www.themoviedb.org/t/p/w220_and_h330_face/hepwOZWJNUmLzB68gKYEdEJAaD3.jpg'),
+              'https://www.themoviedb.org/t/p/w220_and_h330_face/74kkM7E5IymHl7ZS4XugP6YT3zU.jpg'),
           fit: BoxFit.cover,
         ),
       ),

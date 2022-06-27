@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/Presentation/Widgets/video_widget.dart';
 import 'package:netflix_app/Presentation/home/screen_home.dart';
-import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/colors.dart';
+import 'package:netflix_app/core/constants.dart';
 
 class ComingSoonContent extends StatelessWidget {
   const ComingSoonContent({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_app/Presentation/home/screen_home.dart';
-import 'package:netflix_app/core/colors/colors.dart';
+import 'package:netflix_app/core/colors.dart';
 
 class HomeTopSection extends StatelessWidget {
   const HomeTopSection({
@@ -18,7 +18,7 @@ class HomeTopSection extends StatelessWidget {
               image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      'https://www.themoviedb.org/t/p/w220_and_h330_face/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg'))),
+                      'https://www.themoviedb.org/t/p/w220_and_h330_face/xcl4vYTqqzwn3ihUpjCQz0jqhV3.jpg'))),
         ),
         Positioned(
           bottom: 0,

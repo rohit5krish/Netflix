@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:netflix_app/Presentation/Widgets/main_title.dart';
-import 'package:netflix_app/core/colors/colors.dart';
-import 'package:netflix_app/core/constants/constants.dart';
+import 'package:netflix_app/core/colors.dart';
+import 'package:netflix_app/core/constants.dart';
 
 final searchImg =
     'https://www.themoviedb.org/t/p/w250_and_h141_face/8H64YmIYxpRJgSTuLUGRUSyi2kN.jpg';
