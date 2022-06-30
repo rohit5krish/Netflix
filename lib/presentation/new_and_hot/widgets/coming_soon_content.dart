@@ -5,8 +5,20 @@ import 'package:netflix_app/core/colors.dart';
 import 'package:netflix_app/core/constants.dart';
 
 class ComingSoonContent extends StatelessWidget {
+  final String id;
+  final String month;
+  final String day;
+  final String posterPath;
+  final String movieName;
+  final String description;
   const ComingSoonContent({
     Key? key,
+    required this.id,
+    required this.month,
+    required this.day,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -18,15 +30,15 @@ class ComingSoonContent extends StatelessWidget {
         SizedBox(
           width: 50,
           child: Column(
-            children: const [
+            children: [
               Text(
-                'FEB',
+                month,
                 style: TextStyle(
                   color: greyclr,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text('11',
+              Text(day,
                   style: TextStyle(
                       letterSpacing: 4,
                       color: whiteclr,
@@ -37,22 +49,26 @@ class ComingSoonContent extends StatelessWidget {
         ),
         SizedBox(
           width: size.width - 50,
-          height: 470,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              VideoWidget(),
+              VideoWidget(
+                url: posterPath,
+              ),
               SbHeight20,
               Row(
-                children: const [
-                  Text(
-                    'TALLGIRL 2',
-                    style: TextStyle(
-                      letterSpacing: -3,
-                      fontSize: 33,
+                children: [
+                  Expanded(
+                    child: Text(
+                      movieName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          // letterSpacing: -3,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Spacer(),
                   CustomButtonHome(
                     icon: Icons.notifications_outlined,
                     icontxt: 'Remind Me',
@@ -70,24 +86,29 @@ class ComingSoonContent extends StatelessWidget {
                 ],
               ),
               SbHeight10,
-              const Text(
-                'Coming on Friday',
+              Text(
+                'Coming on $day $month',
                 style: TextStyle(
                   color: greyclr,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SbHeight20,
-              const Text('Tall Girl 2',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  )),
+              SizedBox(
+                width: 200,
+                child: Text(movieName,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ),
               SbHeight10,
-              const Text(
-                'Landing the lead in the school musical is a dream come true for Jodi, until the pressure sends her confidence -- and her relationship -- into a tailspain.',
+              Text(
+                description,
+                maxLines: 4,
                 style: const TextStyle(color: greyclr),
-              )
+              ),
+              SbHeight30,
             ],
           ),
         ),

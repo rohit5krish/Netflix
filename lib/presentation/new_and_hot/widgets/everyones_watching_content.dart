@@ -5,8 +5,14 @@ import 'package:netflix_app/core/colors.dart';
 import 'package:netflix_app/core/constants.dart';
 
 class EveryonesWatchingContent extends StatelessWidget {
+  final String posterPath;
+  final String movieName;
+  final String description;
   const EveryonesWatchingContent({
     Key? key,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
   }) : super(key: key);
 
   @override
@@ -15,18 +21,20 @@ class EveryonesWatchingContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SbHeight10,
-        const Text('Friends',
-            style: TextStyle(
+        Text(movieName,
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             )),
         SbHeight10,
-        const Text(
-          'This hit sitcom follows the merry misadventures of six 20-something pals as they navigate the pitfalls of work, life and love in 1990s Manhattan.',
-          style: TextStyle(color: greyclr),
+        Text(
+          description,
+          style: const TextStyle(color: greyclr),
         ),
         SbHeight50,
-        const VideoWidget(),
+        VideoWidget(
+          url: posterPath,
+        ),
         SbHeight10,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

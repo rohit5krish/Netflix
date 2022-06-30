@@ -14,6 +14,3 @@ final BorderRadius borderRad30 = BorderRadius.circular(30);
 // Text Style
 TextStyle homeTitle = TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
 
-// New & Hot Hori Image
-const String horiImg =
-    'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/56v2KjBlU4XaOv9rVYEQypROD7P.jpg';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/Presentation/Widgets/main_card.dart';
 import 'package:netflix_app/Presentation/Widgets/main_title.dart';
+import 'package:netflix_app/presentation/Widgets/main_card.dart';
 
 class HorizontalScroll extends StatelessWidget {
   final String title;
@@ -27,7 +27,12 @@ class HorizontalScroll extends StatelessWidget {
             maxHeight: 200,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: List.generate(10, (index) => const MainCard()),
+              children: List.generate(
+                  10,
+                  (index) => MainCard(
+                        imgUrl:
+                            'https://www.themoviedb.org/t/p/w220_and_h330_face/74kkM7E5IymHl7ZS4XugP6YT3zU.jpg',
+                      )),
             ),
           )
         ],
