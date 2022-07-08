@@ -57,7 +57,7 @@ class ScreenNewAndHot extends StatelessWidget {
                 Tab(text: "👀 Everyone's Watching ")
               ]),
         ),
-        body: TabBarView(children: [
+        body: const TabBarView(children: [
           ComingSoonPage(
             key: Key('coming_soon'),
           ),
@@ -76,12 +76,12 @@ class ComingSoonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      BlocProvider.of<NewAndHotBloc>(context).add(ComingSoonLoadData());
+      BlocProvider.of<NewAndHotBloc>(context).add(const ComingSoonLoadData());
     });
     return RefreshIndicator(
       color: Colors.black,
       onRefresh: () async {
-        BlocProvider.of<NewAndHotBloc>(context).add(ComingSoonLoadData());
+        BlocProvider.of<NewAndHotBloc>(context).add(const ComingSoonLoadData());
       },
       child:
           BlocBuilder<NewAndHotBloc, NewAndHotState>(builder: (context, state) {
@@ -92,9 +92,10 @@ class ComingSoonPage extends StatelessWidget {
             ),
           );
         } else if (state.hasError) {
-          return Center(child: Text('Error while Loading coming soon list'));
+          return const Center(
+              child: Text('Error while Loading coming soon list'));
         } else if (state.comingSoonList.isEmpty) {
-          return Center(child: Text('Coming soon List is empty'));
+          return const Center(child: Text('Coming soon List is empty'));
         } else {
           return ListView.builder(
             itemCount: state.comingSoonList.length,
@@ -113,7 +114,7 @@ class ComingSoonPage extends StatelessWidget {
               }
 
               return Padding(
-                padding: EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10),
                 child: ComingSoonContent(
                   id: movie.id.toString(),
                   month: month,
@@ -137,12 +138,14 @@ class EveryoneWatchingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      BlocProvider.of<NewAndHotBloc>(context).add(EveryoneWatchingLoadData());
+      BlocProvider.of<NewAndHotBloc>(context)
+          .add(const EveryoneWatchingLoadData());
     });
     return RefreshIndicator(
       color: Colors.black,
       onRefresh: () async {
-        BlocProvider.of<NewAndHotBloc>(context).add(EveryoneWatchingLoadData());
+        BlocProvider.of<NewAndHotBloc>(context)
+            .add(const EveryoneWatchingLoadData());
       },
       child:
           BlocBuilder<NewAndHotBloc, NewAndHotState>(builder: (context, state) {
@@ -153,9 +156,10 @@ class EveryoneWatchingPage extends StatelessWidget {
             ),
           );
         } else if (state.hasError) {
-          return Center(child: Text('Error while Loading coming soon list'));
+          return const Center(
+              child: Text('Error while Loading coming soon list'));
         } else if (state.everyoneWatchingList.isEmpty) {
-          return Center(child: Text('List is empty'));
+          return const Center(child: Text('List is empty'));
         } else {
           return ListView.builder(
             itemCount: state.everyoneWatchingList.length,
@@ -166,7 +170,7 @@ class EveryoneWatchingPage extends StatelessWidget {
               }
 
               return Padding(
-                padding: EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                 child: EveryonesWatchingContent(
                   posterPath: '$imgBaseUrl${movie.posterPath}',
                   movieName: movie.originalName ?? 'No Title',

@@ -10,29 +10,35 @@ class SearchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const mainTitle(title: 'Movies & TV'),
-        SbHeight10,
-        Expanded(child: BlocBuilder<SearchBloc, SearchState>(
-          builder: (context, state) {
-            return GridView.count(
-              shrinkWrap: true,
-              crossAxisCount: 3,
-              mainAxisSpacing: 8,
-              crossAxisSpacing: 8,
-              childAspectRatio: 1 / 1.5,
-              children: List.generate(20, (index) {
-                final movie = state.searchResultList[index];
-                return MainCard(
-                  imgUrl: movie.posterImgUrl,
-                );
-              }),
-            );
-          },
-        ))
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(left: 4),
+            child: mainTitle(title: 'Movies & TV'),
+          ),
+          SbHeight20,
+          Expanded(child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              return GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 1 / 1.5,
+                children: List.generate(20, (index) {
+                  final movie = state.searchResultList[index];
+                  return MainCard(
+                    imgUrl: movie.posterImgUrl,
+                  );
+                }),
+              );
+            },
+          ))
+        ],
+      ),
     );
   }
 }

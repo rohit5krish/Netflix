@@ -162,7 +162,7 @@ class _FastLaughVideoPlayerState extends State<FastLaughVideoPlayer> {
               aspectRatio: _videoPlayerController.value.aspectRatio,
               child: VideoPlayer(_videoPlayerController),
             )
-          : Center(
+          : const Center(
               child: CircularProgressIndicator(
                 strokeWidth: 2,
               ),

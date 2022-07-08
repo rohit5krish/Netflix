@@ -9,20 +9,20 @@ class ScreenFastLaugh extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      BlocProvider.of<FastLaughBloc>(context).add(Initialize());
+      BlocProvider.of<FastLaughBloc>(context).add(const Initialize());
     });
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<FastLaughBloc, FastLaughState>(
           builder: (context, state) {
             if (state.isLoading) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (state.isError) {
-              return Center(child: Text('Error Occured'));
+              return const Center(child: Text('Error Occured'));
             } else if (state.videosList.isEmpty) {
-              return Center(child: Text('Video List Empty'));
+              return const Center(child: Text('Video List Empty'));
             } else {
               return PageView(
                 scrollDirection: Axis.vertical,

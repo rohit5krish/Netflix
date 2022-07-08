@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/Presentation/Widgets/main_title.dart';
-import 'package:netflix_app/Presentation/home/widgets/animated_num_card.dart';
 import 'package:netflix_app/core/constants.dart';
+import 'package:netflix_app/presentation/Widgets/main_title.dart';
+import 'package:netflix_app/presentation/home/widgets/animated_num_card.dart';
 
 class AnimatedHorizontalScroll extends StatelessWidget {
+  final List<String> postersList;
   const AnimatedHorizontalScroll({
     Key? key,
+    required this.postersList,
   }) : super(key: key);
 
   @override
@@ -15,8 +17,8 @@ class AnimatedHorizontalScroll extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          mainTitle(
-            title: 'Top 10 TV Shows In India Today',
+          const mainTitle(
+            title: 'Top 10 in India Today',
           ),
           SbHeight10,
           LimitedBox(
@@ -24,7 +26,11 @@ class AnimatedHorizontalScroll extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: List.generate(
-                  10, (index) => AnimatedNumberCard(index: index)),
+                  postersList.length,
+                  (index) => AnimatedNumberCard(
+                        index: index,
+                        imgurl: postersList[index],
+                      )),
             ),
           )
         ],

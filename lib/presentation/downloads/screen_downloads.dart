@@ -13,13 +13,12 @@ class ScreenDownloads extends StatelessWidget {
 
   final _widgetsList = [
     const _SmartDownload(),
-    Section2(),
+    const Section2(),
     const Section3(),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
@@ -27,6 +26,7 @@ class ScreenDownloads extends StatelessWidget {
             title: 'Downloads',
           )),
       body: ListView.separated(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(10),
           itemBuilder: (context, index) {
             return _widgetsList[index];
@@ -59,12 +59,7 @@ class _SmartDownload extends StatelessWidget {
 }
 
 class Section2 extends StatelessWidget {
-  Section2({Key? key}) : super(key: key);
-  final List images = [
-    'https://www.themoviedb.org/t/p/w220_and_h330_face/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg',
-    'https://www.themoviedb.org/t/p/w220_and_h330_face/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg',
-    'https://www.themoviedb.org/t/p/w220_and_h330_face/hepwOZWJNUmLzB68gKYEdEJAaD3.jpg'
-  ];
+  const Section2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;

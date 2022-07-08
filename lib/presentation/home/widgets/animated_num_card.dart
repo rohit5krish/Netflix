@@ -5,7 +5,10 @@ import 'package:netflix_app/core/constants.dart';
 
 class AnimatedNumberCard extends StatelessWidget {
   final int index;
-  const AnimatedNumberCard({Key? key, required this.index}) : super(key: key);
+  final String imgurl;
+  const AnimatedNumberCard(
+      {Key? key, required this.index, required this.imgurl})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +16,14 @@ class AnimatedNumberCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            SizedBox(width: 30, height: 150),
+            const SizedBox(width: 30, height: 150),
             Container(
               width: 120,
               height: 200,
               decoration: BoxDecoration(
                 borderRadius: borderRad10,
-                image: const DecorationImage(
-                  image: NetworkImage(
-                      'https://www.themoviedb.org/t/p/w220_and_h330_face/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg'),
+                image: DecorationImage(
+                  image: NetworkImage(imgurl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -36,7 +38,7 @@ class AnimatedNumberCard extends StatelessWidget {
                 strokeColor: whiteclr,
                 child: Text(
                   '${index + 1}',
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: bgcolor,
                       fontSize: 110,
                       fontWeight: FontWeight.bold,

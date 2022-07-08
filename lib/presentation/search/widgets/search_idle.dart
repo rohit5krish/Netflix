@@ -12,38 +12,41 @@ class SearchIdleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        mainTitle(
-          title: 'Top Searches',
-        ),
-        SbHeight20,
-        Expanded(
-          child: BlocBuilder<SearchBloc, SearchState>(
-            builder: (context, state) {
-              if (state.isLoading) {
-                return Center(child: CircularProgressIndicator());
-              } else if (state.idleList.isEmpty) {
-                return Center(child: Text('The List is Empty'));
-              } else if (state.isError) {
-                return Center(child: Text('An error occured'));
-              }
-              return ListView.separated(
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    final movie = state.idleList[index];
-                    return TopSearch(
-                      title: movie.title ?? movie.title2.toString(),
-                      imageUrl: '$imgBaseUrl${movie.backImg}',
-                    );
-                  },
-                  separatorBuilder: (context, index) => SbHeight20,
-                  itemCount: state.idleList.length);
-            },
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const mainTitle(
+            title: 'Top Searches',
           ),
-        )
-      ],
+          SbHeight20,
+          Expanded(
+            child: BlocBuilder<SearchBloc, SearchState>(
+              builder: (context, state) {
+                if (state.isLoading) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (state.idleList.isEmpty) {
+                  return const Center(child: Text('The List is Empty'));
+                } else if (state.isError) {
+                  return const Center(child: Text('An error occured'));
+                }
+                return ListView.separated(
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      final movie = state.idleList[index];
+                      return TopSearch(
+                        title: movie.title ?? movie.title2.toString(),
+                        imageUrl: '$imgBaseUrl${movie.backImg}',
+                      );
+                    },
+                    separatorBuilder: (context, index) => SbHeight20,
+                    itemCount: state.idleList.length);
+              },
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -75,13 +78,13 @@ class TopSearch extends StatelessWidget {
         Expanded(
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
-        Icon(
+        const Icon(
           CupertinoIcons.play_circle,
           size: 50,
           color: whiteclr,

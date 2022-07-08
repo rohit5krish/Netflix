@@ -20,8 +20,10 @@ class BottomNav extends StatelessWidget {
             backgroundColor: bgcolor,
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.grey,
-            selectedLabelStyle: TextStyle(color: Colors.white),
-            unselectedLabelStyle: TextStyle(color: Colors.grey),
+            selectedLabelStyle: const TextStyle(color: Colors.white),
+            unselectedLabelStyle: const TextStyle(color: Colors.grey),
+            selectedFontSize: 12,
+            unselectedFontSize: 10,
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
               BottomNavigationBarItem(

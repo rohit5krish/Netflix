@@ -33,13 +33,13 @@ class ComingSoonContent extends StatelessWidget {
             children: [
               Text(
                 month,
-                style: TextStyle(
+                style: const TextStyle(
                   color: greyclr,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(day,
-                  style: TextStyle(
+                  style: const TextStyle(
                       letterSpacing: 4,
                       color: whiteclr,
                       fontSize: 25,
@@ -63,20 +63,20 @@ class ComingSoonContent extends StatelessWidget {
                       movieName,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                           // letterSpacing: -3,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  CustomButtonHome(
+                  const CustomButtonHome(
                     icon: Icons.notifications_outlined,
                     icontxt: 'Remind Me',
                     iconSize: 22,
                     textSize: 10,
                   ),
                   SbWidth20,
-                  CustomButtonHome(
+                  const CustomButtonHome(
                     icon: Icons.info_outline,
                     icontxt: 'Info',
                     iconSize: 22,
@@ -88,7 +88,7 @@ class ComingSoonContent extends StatelessWidget {
               SbHeight10,
               Text(
                 'Coming on $day $month',
-                style: TextStyle(
+                style: const TextStyle(
                   color: greyclr,
                   fontWeight: FontWeight.bold,
                 ),
@@ -97,7 +97,7 @@ class ComingSoonContent extends StatelessWidget {
               SizedBox(
                 width: 200,
                 child: Text(movieName,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     )),
